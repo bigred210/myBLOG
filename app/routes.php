@@ -51,6 +51,9 @@ Route::get('/rolldice/{guess}', function($guess)
         'guess' => $guess, 
         'message' => $message
         ];
+
+        // dd($data); // -- dump and die() = var_dump() 
+
         return View::make('roll-dice')->with($data);
 });
 
