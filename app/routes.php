@@ -46,10 +46,6 @@ Route::get('/rolldice/{guess}', function($guess)
         }
         $data = array('roll' => $roll, 'guess' => $guess, 'message' => $message);
         return View::make('roll-dice')->with($data);
-    
-   
-
-
 });
 
 
