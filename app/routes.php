@@ -26,6 +26,31 @@ Route::get('/portfolio', function()
     return 'This is my Portfolio page.';
 });
 
+Route::get('/sayhello/{name}', function($name)
+{
+    if ($name == "Chris") {
+        return Redirect::to('/');
+    } else {
+        $data = array('name' => $name);
+        return View::make('my-first-view')->with($data);
+    }
+});
+
+Route::get('/rolldice/{guess}', function($guess) 
+{
+        $roll = mt_rand(1,6);
+        if ( $roll == $guess){
+            $message = 'YOU WIN!';
+        } else {
+            $message = 'YOU LOSE';
+        }
+        $data = array('roll' => $roll, 'guess' => $guess, 'message' => $message);
+        return View::make('roll-dice')->with($data);
+    
+   
+
+
+});
 
 
 
