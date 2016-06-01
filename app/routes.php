@@ -44,7 +44,13 @@ Route::get('/rolldice/{guess}', function($guess)
         } else {
             $message = 'YOU LOSE';
         }
-        $data = array('roll' => $roll, 'guess' => $guess, 'message' => $message);
+            // below are the 2 ways to write out arrays
+        // $data = array('roll' => $roll, 'guess' => $guess, 'message' => $message);
+        $data = [
+        'roll' => $roll, 
+        'guess' => $guess, 
+        'message' => $message
+        ];
         return View::make('roll-dice')->with($data);
 });
 
