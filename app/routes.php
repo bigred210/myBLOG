@@ -15,3 +15,49 @@ Route::get('/', function()
 {
 	return View::make('hello');
 });
+
+Route::get('/resume', function() 
+{
+    return 'This is my Resume page';
+});
+
+Route::get('/portfolio', function() 
+{
+    return 'This is my Portfolio page.';
+});
+
+
+
+
+
+
+
+    //  ___examples___
+
+// Route::get('/sayHello', function() 
+// {
+//     return 'Hello, Jerod';
+// });
+
+// Route::get('/sayHello/{name}', function($name) 
+// {
+//     return "Hello, $name";
+// });
+
+// Route::get('/sayhello/{name?}', function($name) // <-- ? = gives it option to pass value
+// {
+//     if ($name == "Jerod") {
+//         return Redirect::to('/');
+//     } else {
+//         return "Hello, $name!";
+//     }
+// });
+
+// Route::get('/sayhello/{name}', function($name) 
+// {
+//     if ($name == "Jerod") {
+//         return Redirect::to('/');
+//     } else {
+//         return "Hello, $name!";
+//     }
+// });
