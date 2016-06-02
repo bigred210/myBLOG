@@ -21,3 +21,5 @@ Route::get('/resume', 'HomeController@resume');
 Route::get('/portfolio/projects', 'HomeController@portfolioProjects');
 Route::get('/portfolio/about', 'HomeController@portfolioAbout');
 Route::get('/portfolio', 'HomeController@portfolio');
+// Post Pages
+Route::resource('posts', 'PostsController');
