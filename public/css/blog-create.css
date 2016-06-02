@@ -1,0 +1,19 @@
+body {
+    background: url(/img/blogbck.jpg);
+    color: #b8d7fc;
+}
+
+input {
+    background-color: #b8d7fc;
+    color: black;
+    border-radius: 10px;
+    border-color: white;
+}
+
+textarea {
+    background-color: #b8d7fc;
+    color: black;
+    border-radius: 10px;
+    border-color: white;
+}
+

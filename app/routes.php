@@ -23,3 +23,9 @@ Route::get('/portfolio/about', 'HomeController@portfolioAbout');
 Route::get('/portfolio', 'HomeController@portfolio');
 // Post Pages
 Route::resource('posts', 'PostsController');
+
+Route::get('orm-test', function ()
+{
+    $post = Post::find(1);
+    $post->delete();
+});

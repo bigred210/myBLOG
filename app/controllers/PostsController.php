@@ -9,7 +9,8 @@ class PostsController extends \BaseController {
 	 */
 	public function index()
 	{
-		return 'all listst of postings';
+		$posts = Post::all();
+		return View::make('posts.index')->with('posts',$posts);
 	}
 
 
@@ -43,7 +44,8 @@ class PostsController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		return View::make('posts.show');
+		$post = Post::find($id);
+		return View::make('posts.show')->with('post',$post);
 	}
 
 
@@ -79,7 +81,8 @@ class PostsController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-	
+		$post = Post::find($id);
+		$post->delete();
 	}
 
 
