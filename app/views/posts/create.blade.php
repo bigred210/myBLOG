@@ -5,14 +5,35 @@
     <title>Create a Post</title>
     <link rel="stylesheet" href="/css/blog-create.css">
 @stop
-
 @section('content')
-    <h1>Create a Post</h1>
-    <form method="POST" action="{{{ action('PostsController@store') }}}">
-        <input type="text" class="title" name="title" value="{{{ Input::old('title') }}}" placeholder="Blog Title">
-        <br><br>
-        <textarea rows="4" cols="50" class="body" name="body" placeholder="Start Blog'n">{{{ Input::old('body') }}}</textarea>
-        <br><br>
-        <input type="submit">
-    </form>
+
+            <!-- create blog post -->
+        <div class="section3" id="createBlog">
+            <div class="container">
+                <div class="row">
+
+                    <div class="form col-xs-12 col-md-6 col-md-offset-3">
+                        {{ Form::open(array('action' => 'PostsController@store')) }}
+                            {{ Form::text('title', null, ['class'=>'title','value'=>"{{{ Input::old('title')}}}",'placeholder'=>'Title'])}}
+                            {{ $errors->first('title', '<span class="help-block">:message</span>') }}
+                            <br><br>
+
+                    </div><!-- end col / form -->
+                </div><!-- end row  -->
+                <div class="row">
+                    <div class="form col-xs-12 col-md-6 col-md-offset-3">
+                    <img class="robot" src="/../img/robot-look.png">
+                </div>
+                    <div class="form col-xs-12 col-md-6 col-md-offset-3">
+                            {{ Form::textarea('body', null, ['class'=>'body','value'=>"{{{ Input::old('body')}}}",'placeholder'=>'Type Blog Post Here'])}}
+                            {{ $errors->first('body', '<span class="help-block">:message</span>') }}
+                            <br><br>
+
+                            <input class="submit" type="submit">
+                        {{ Form::close() }}
+                    </div><!-- end col / form -->
+                </div><!-- end row  -->
+            </div><!-- end container -->
+        </div> <!-- end section -->
+
 @stop

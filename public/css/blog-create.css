@@ -1,19 +1,62 @@
+
+
+/* -------------createBlogPost--------------- */
 body {
-    background: url(/img/blogbck.jpg);
-    color: #b8d7fc;
+    background-color: #22313F;
+}
+
+.robot {
+    position: absolute;
+    margin-left: 220px;
+    margin-top: -170px;
+    z-index: +1;
+}
+
+#createBlog {
+    height: 725px;
+    background-position: absolute;
+    background-color: #34495E;
+    color: #ECECEC;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #6C7A89;
+  font-size: 20px;
+  font-weight: bold;
+  padding-left: 10px;
+}
+
+form {
+    padding-top: 200px;
 }
 
 input {
-    background-color: #b8d7fc;
-    color: black;
-    border-radius: 10px;
-    border-color: white;
+    background-color: #D2D7D3;
+    height: 30px;
+    border-radius: 5px;
+    border-color: transparent;
+    color: #ECECEC;
+    font-size: 20px;
 }
 
 textarea {
-    background-color: #b8d7fc;
-    color: black;
+    width: auto;
+    background-color: #D2D7D3;
     border-radius: 10px;
-    border-color: white;
+    border-color: transparent;
+    color: #ECECEC; 
+    font-size: 20px;
+    resize: both;
+    overflow: auto;
+    z-index: -1000;
+}
+
+.submit{
+    background-color: #D2D7D3;
+    border-radius: 10px;
+    border-color: transparent;
+    color: #6C7A89; 
+    font-weight: bold;
+    font-size: 20px;
 }
 

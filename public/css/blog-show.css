@@ -1,0 +1,41 @@
+body {
+    background-color: #22313F;
+}
+
+.container {
+    background-color: #F64747;
+}
+.for-each {
+    background-color: #F1A9A0;
+}
+
+.blogs {
+    background-color: rgba(52, 73, 94, .9);
+    border-radius: 10px;
+    color: #D2D7D3;
+}
+
+/* --- href links --- */
+
+/* unvisited link */
+a:link {
+    color: #F64747;
+}
+
+/* visited link */
+a:visited {
+    color: #A2DED0;
+}
+
+/* mouse over link */
+a:hover {
+    color: #F62459;
+}
+
+/* selected link */
+a:active {
+    color: #F64747;
+}
+
+
+

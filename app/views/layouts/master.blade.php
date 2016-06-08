@@ -10,8 +10,15 @@
 </head>
 <body>
     <section class='container'>
+        @if (Session::has('successMessage'))
+    <div class="alert alert-success">{{{ Session::get('successMessage') }}}</div>
+        @endif
+        @if (Session::has('errorMessage'))
+            <div class="alert alert-danger">{{{ Session::get('errorMessage') }}}</div>
+        @endif
         @yield('content')
     </section>
+
 
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 <!-- Latest compiled and minified JavaScript -->

@@ -1,6 +1,6 @@
 <?php
 
-class PostsController extends \BaseController {
+class PostsController extends BaseController {
 
 	/**
 	 * Display a listing of the resource.
@@ -9,8 +9,10 @@ class PostsController extends \BaseController {
 	 */
 	public function index()
 	{
-		$posts = Post::all();
-		return View::make('posts.index')->with('posts',$posts);
+		// $posts = Post::all();
+		// return View::make('posts.index')->with('posts',$posts);
+		$posts = Post::paginate(4);
+    	return View::make('posts.index')->with(array('posts' => $posts));
 	}
 
 
@@ -32,7 +34,29 @@ class PostsController extends \BaseController {
 	 */
 	public function store()
 	{
-		return Redirect::back()->withInput();
+		$post = new Post();
+		$post->user_id = Auth::id();
+		$post->title = Input::get('title');
+		$post->body = Input::get('body');
+
+	    // create the validator
+	    $validator = Validator::make(Input::all(), Post::$rules);
+
+	    // attempt validation
+	    if ($validator->fails()) {
+	        Session::flash('errorMessage', 'Your Post was not successfully created. Please try again.');
+	        // validation failed, redirect to the post create page with validation errors and old inputs
+	        return Redirect::back()->withInput()->withErrors($validator);
+	    } else {
+	        // validation succeeded, create and save the post
+	        if($post->save()) {
+	        Session::flash('successMessage', 'Your Post has been successfully created!');
+			return Redirect::action('PostsController@show',$post->id);
+			}else {
+			Session::flash('errorMessage', 'Error');
+			return Redirect::back()->withInput();
+			}
+	    }
 	}
 
 
@@ -57,7 +81,9 @@ class PostsController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		return View::make('posts.edit');
+		$post = Post::find($id);
+		// dd($post);
+		return View::make('posts.edit')->with(['post', $post]);
 	}
 
 
@@ -69,7 +95,30 @@ class PostsController extends \BaseController {
 	 */
 	public function update($id)
 	{
-	
+		$post = Post::find($id);
+		$post->title = Input::get('title');
+		$post->body = Input::get('body');
+
+	    // create the validator
+	    $validator = Validator::make(Input::all(), Post::$rules);
+
+	    // attempt validation
+	    if ($validator->fails()) {
+	        Session::flash('errorMessage', 'Your Post was not successfully updated. Please try again.');
+	        // validation failed, redirect to the post create page with validation errors and old inputs
+	        return Redirect::back()->withInput()->withErrors($validator);
+	    } else {
+	        // validation succeeded, create and save the post
+	        if($post->save()) {
+			Session::flash('successMessage', 'Your Post has been successfully created!');
+			return Redirect::action('PostsController@show', $post->id);
+			}else {
+			Session::flash('errorMessage', 'Error');
+			return Redirect::back()->withInput();
+			}
+			Session::flush();
+	    }
+	    Session::flush();
 	}
 
 

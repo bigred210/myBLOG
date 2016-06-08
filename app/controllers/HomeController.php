@@ -26,6 +26,7 @@ class HomeController extends BaseController {
 	    $data = array('name' => $name);
 	    return View::make('my-first-view')->with($data);
 	}
+
 // Resume Page
 	public function resume()
 	{
@@ -53,6 +54,7 @@ class HomeController extends BaseController {
 
         return View::make('roll-dice')->with($data);
 	}
+
 // Portfolio Page 
 	public function portfolioProjects() 
 	{
@@ -66,6 +68,54 @@ class HomeController extends BaseController {
 	{
    		return View::make('portfolio-about');
 	}
+
+// Blog - Posts
+    public function login()
+    {
+        return View::make('posts.login');
+    }
+
+        public function goLogin()
+    {
+        $credentials = [
+            'username'=>Input::get('username'),
+            'password'=>Input::get('password')
+        ];
+        $rules = [
+            'username' => 'required',
+            'password'=>'required'
+        ];
+
+        //validating the credentials.
+        $validator = Validator::make($credentials,$rules);
+        
+        //in case the credentials are valid. Try to login the user.
+        if($validator->passes())
+        {
+        
+            if(Auth::attempt($credentials))
+            {
+                 
+                //if successfull redirect the user 
+                return Redirect::to('posts/create');
+            }else {
+                
+            //else send back the login failure message.
+                return Redirect::back()->withInput()->with('failure','username or password is invalid!');
+            }
+        }else {
+            //send back the validation errors.
+            return Redirect::back()->withErrors($validator)->withInput();
+        }
+        
+    }
+
+
+    public function logout()
+    {
+        Auth::logout();
+        return Redirect::to('/');
+    }
 
 }
 

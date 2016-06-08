@@ -29,3 +29,7 @@ Route::get('orm-test', function ()
     $post = Post::find(1);
     $post->delete();
 });
+
+Route::get('/login', 'HomeController@login');
+Route::post('/login', 'HomeController@goLogin');
+Route::get('logout', 'HomeController@logout');
