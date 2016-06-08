@@ -11,7 +11,7 @@ class PostsController extends BaseController {
 	{
 		// $posts = Post::all();
 		// return View::make('posts.index')->with('posts',$posts);
-		$posts = Post::paginate(4);
+		$posts = Post::paginate(2);
     	return View::make('posts.index')->with(array('posts' => $posts));
 	}
 

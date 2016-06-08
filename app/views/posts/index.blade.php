@@ -7,11 +7,15 @@
 @stop
 
 @section('content')
+    @include("posts.postsNav")
     <div class="container">
+        <div class="logo col-sm-4 col-sm-offset-1">
+            <img src="/../img/laying.png">
+        </div>
         @foreach ($posts as $post)
             <br><br>         
                 <div class="row">
-                    <div class="blogs col-xs-12 col-md-6 col-md-offset-3">
+                    <div class="blogs col-xs-12 col-sm-4 col-sm-offset-2">
                         <div>
                             <h2><a href="{{{action('PostsController@show',$post->id)}}}">{{{ $post->title }}}</a></h2>
                             <h4>Written by: {{{ $post->user->username }}}</h4>
@@ -22,6 +26,8 @@
                 </div> <!-- end of row -->
             <br><br>   
         @endforeach
-        <p>{{ $posts->links() }}</p>
+        <div class="pages">
+            <p >{{ $posts->links() }}</p>
+        </div>
     </div> <!-- end of container -->
 @stop

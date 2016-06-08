@@ -1,15 +1,54 @@
+     /* --- navbar --- */
+.navbut{ 
+    background-color: #222222;
+    color: white;
+    border: none;
+    box-shadow: inset 0 0 5px white;
+}
+
+.signinbut{
+    padding-right: 20px;
+    float: right;   
+    padding-top: 30px;  
+}
+
+.navbar{
+    height: 100px;
+    margin: 0;
+    padding: 0px;
+    border-radius: 0px;
+}
+
+.navbardiv{
+    margin: 0px;
+    padding: 0px;
+    border-radius: 0px;
+}
+
+.navlogo{
+    font-family: 'Pacifico', cursive;
+    font-size: 20px;
+    color: white;
+    text-align: left;
+    padding-left: 40px;
+}
+
+  /* --- body --- */
+
 body {
-    background-color: #22313F;
+    background-color: #F2F1EF;
 }
 
 .container {
-    background-color: #F64747;
-}
-.for-each {
-    background-color: #F1A9A0;
+    background-color: #F2F1EF;
 }
 
-.blogs {
+.logo {
+    margin-top: 150px;
+}
+
+.show {
+    margin-top: 150px;
     background-color: rgba(52, 73, 94, .9);
     border-radius: 10px;
     color: #D2D7D3;

@@ -6,9 +6,9 @@
     <link rel="stylesheet" href="/css/blog-create.css">
 @stop
 @section('content')
-
+        @include("posts.postsNav")
             <!-- create blog post -->
-        <div class="section3" id="createBlog">
+        <div class="section" id="createBlog">
             <div class="container">
                 <div class="row">
 
