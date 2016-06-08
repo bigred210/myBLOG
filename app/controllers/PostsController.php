@@ -69,7 +69,11 @@ class PostsController extends BaseController {
 	public function show($id)
 	{
 		$post = Post::find($id);
+		if ($post != null) {
 		return View::make('posts.show')->with('post',$post);
+		}else {
+			App::abort('404');
+		}
 	}
 
 
