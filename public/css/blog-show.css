@@ -17,6 +17,7 @@
     margin: 0;
     padding: 0px;
     border-radius: 0px;
+    font-family: 'Rock Salt', cursive;
 }
 
 .navbardiv{
@@ -26,17 +27,38 @@
 }
 
 .navlogo{
-    font-family: 'Pacifico', cursive;
     font-size: 20px;
     color: white;
     text-align: left;
     padding-left: 40px;
 }
 
+.btn.btn-custom {
+    color: #ECECEC;
+    background-color: #46596b;
+    border-color: #D2D7D3; 
+}
+
+.btn.btn-custom:hover, .btn.btn-custom:focus {
+    color: #F22613;
+    background-color: #19B5FE;
+    border-color: #19B5FE;
+}
+
+
   /* --- body --- */
 
-body {
+body { 
     background-color: #F2F1EF;
+}
+
+h1 {
+    font-family: 'Rock Salt', cursive;  
+}
+
+small {
+    font-family: 'Orbitron', sans-serif; 
+    font-size: 8px;
 }
 
 .container {
@@ -54,27 +76,7 @@ body {
     color: #D2D7D3;
 }
 
-/* --- href links --- */
 
-/* unvisited link */
-a:link {
-    color: #F64747;
-}
-
-/* visited link */
-a:visited {
-    color: #A2DED0;
-}
-
-/* mouse over link */
-a:hover {
-    color: #F62459;
-}
-
-/* selected link */
-a:active {
-    color: #F64747;
-}
 
 
 

@@ -1,5 +1,4 @@
-
-    /* --- navbar --- */
+     /* --- navbar --- */
 .navbut{ 
     background-color: #222222;
     color: white;
@@ -18,6 +17,7 @@
     margin: 0;
     padding: 0px;
     border-radius: 0px;
+    font-family: 'Rock Salt', cursive;
 }
 
 .navbardiv{
@@ -27,11 +27,22 @@
 }
 
 .navlogo{
-    font-family: 'Pacifico', cursive;
     font-size: 20px;
     color: white;
     text-align: left;
     padding-left: 40px;
+}
+
+.btn.btn-custom {
+    color: #ECECEC;
+    background-color: #46596b;
+    border-color: #D2D7D3; 
+}
+
+.btn.btn-custom:hover, .btn.btn-custom:focus {
+    color: #F22613;
+    background-color: #19B5FE;
+    border-color: #19B5FE;
 }
 
 /* -------------createBlogPost--------------- */

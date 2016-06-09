@@ -1,18 +1,18 @@
      /* --- navbar --- */
-.navbut{ 
+.navbut { 
     background-color: #222222;
     color: white;
     border: none;
     box-shadow: inset 0 0 5px white;
 }
 
-.signinbut{
+.signinbut {
     padding-right: 20px;
     float: right;   
     padding-top: 30px;  
 }
 
-.navbar{
+.navbar {
     height: 100px;
     margin: 0;
     padding: 0px;
@@ -20,13 +20,13 @@
     font-family: 'Rock Salt', cursive;
 }
 
-.navbardiv{
+.navbardiv {
     margin: 0px;
     padding: 0px;
     border-radius: 0px;
 }
 
-.navlogo{
+.navlogo {
     font-size: 20px;
     color: white;
     text-align: left;
@@ -45,51 +45,28 @@
     border-color: #19B5FE;
 }
 
-      /* --- body --- */
+    /* --- BODY --- */
 
 body {
-    background-color: #F2F1EF;
+    background-color: black;
 }
 
-.logo {
-    position: absolute;
-    float: left;
-    margin-top: 250px;
+.jumbotron {
+    background-color: grey;
+    margin-top: 30px;
 }
 
-.pages {
-    margin-left: 500px;
+.robot {
+    margin-left: -40px;
 }
 
-.container {
-    background-color: #F2F1EF;
+.404 {
+    font-size: 10px;
 }
 
-.for-each {
-    background-color: #F1A9A0;
-}
 
-.blogs {
-    margin-left: 600px;
-    background-color: rgba(52, 73, 94, .9);
-    border-radius: 10px;
-    color: #D2D7D3;
-}
 
-/* --- href links --- */
 
-/* unvisited link */
-a:link {
-    color: #22A7F0;
-}
 
-/* visited link */
-a:visited {
-    color: #E4F1FE;
-}
 
-/* mouse over link */
-a:hover {
-    color: #5C97BF;
-}
 
