@@ -136,6 +136,9 @@ class PostsController extends BaseController {
 	{
 		$post = Post::find($id);
 		$post->delete();
+		Session::flash('successMessage', 'Your Post has been successfully deleted!');
+		return Redirect::action('PostsController@index');
+
 	}
 
 
